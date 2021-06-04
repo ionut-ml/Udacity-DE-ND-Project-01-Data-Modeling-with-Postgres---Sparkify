@@ -6,6 +6,13 @@ from sql_queries import *
 
 
 def process_song_file(cur, filepath):
+    """
+    Function used for populating the songs and users tables. It processes a JSON file with song metadata from a provided directory. 
+    It creates a subset of relevant columns and inserts the rows into the songs and artists database tables.
+    
+    The function inputs are: curr (the cursor variable for the DB connection), and filepath (the directory of the json file to be processed).
+    """
+    
     # open song file
     df = pd.read_json(filepath, lines=True)
 
